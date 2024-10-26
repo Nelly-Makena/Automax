@@ -19,13 +19,14 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import  static
 
-from Main.views import main_view
+from Main.views import main_view,home_view
 from Users import urls as users_app_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_view, name='main'),
     path('',include(users_app_urls)),
+    path('home/', home_view, name='home'),
 
 ]
 
