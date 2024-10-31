@@ -1,6 +1,7 @@
 from django.contrib import admin
+from .models import Listing
 
-from.models import Listing
-admin.site.register(Listing)
+class ListingAdmin(admin.ModelAdmin):
+    readonly_fields = ('id', 'vin')
 
-# Register your models here.
+admin.site.register(Listing, ListingAdmin)
