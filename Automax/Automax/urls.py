@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import  static
 
-from Main.views import main_view,home_view
+from Main.views import main_view,home_view,edit_view
 from Users import urls as users_app_urls
 
 urlpatterns = [
@@ -27,6 +27,7 @@ urlpatterns = [
     path('', main_view, name='main'),
     path('',include(users_app_urls)),
     path('home/', home_view, name='home'),
+    path('listing/<str:id>/edit/', edit_view, name='edit'),
 
 ]
 

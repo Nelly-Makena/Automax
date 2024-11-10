@@ -10,9 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import environ
 
 from pathlib import Path
+
+import environ
 from django.contrib.messages import constants as messages
+
+#Initialize Environ
+
+env = environ.Env()
+env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -142,6 +150,14 @@ MEDIA_URL = 'media/'
 #DJANGO-CRISPY-DEFAULT-STYLING
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#EMAIL SETTINGS
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST =  'smtp.mailgun.org'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "postmaster@sandboxbbcd846f814f4a2680478a04800bef48.mailgun.org"
+EMAIL_HOST_PASSWORD = "be8ef7fac53c5e54e052a6e0cbc86c5f-f6fe91d3-8cdbd49e"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
