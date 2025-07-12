@@ -10,4 +10,3 @@ class LikedListingAdmin(admin.ModelAdmin):
 
 admin.site.register(Listing, ListingAdmin)
 admin.site.register(LikedListing, LikedListingAdmin)
-
